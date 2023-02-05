@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 
-import store from './app/store';
+import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { history } from './utils/history';

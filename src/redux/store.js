@@ -5,8 +5,12 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { history } from '../utils/history';
 import rootSaga from './rootSaga';
 
+// Reducer
+import authReducer from 'src/services/auth/authSlice';
+
 const rootReducer = combineReducers({
   router: connectRouter(history),
+  auth: authReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
