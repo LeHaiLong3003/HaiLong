@@ -1,0 +1,11 @@
+.header-logo {
+  float: left;
+}
+.header_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-login {
+  float: right;
+}

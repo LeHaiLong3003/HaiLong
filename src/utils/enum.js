@@ -11,3 +11,5 @@ export const UserRoles = {
   STUDENT: 'STUDENT',
   TEACHER: 'TEACHER',
 };
+
+export const MenuItems = ['Trang chủ', 'Các khóa học', 'Câu chuyện của chúng tôi', 'Blog'];
