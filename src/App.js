@@ -16,19 +16,21 @@ import './App.css';
 function App() {
   return (
     <Switch>
-      <Route exact path='/' component={DefaultLayout} />
-
-      <ProtectedRoute roles={UserRoles.STUDENT} path='/student'>
+      <ProtectedRoute exact roles={UserRoles.STUDENT} path='/student'>
         <StudentLayout />
       </ProtectedRoute>
 
-      <ProtectedRoute roles={UserRoles.TEACHER} path='/teacher'>
+      <ProtectedRoute exact roles={UserRoles.TEACHER} path='/teacher'>
         <TeacherLayout />
       </ProtectedRoute>
 
-      <ProtectedRoute roles={UserRoles.ADMIN} path='/admin'>
+      <ProtectedRoute exact roles={UserRoles.ADMIN} path='/admin'>
         <AdminLayout />
       </ProtectedRoute>
+
+      <Route path='/'>
+        <DefaultLayout />
+      </Route>
 
       <Route path='*'>
         <NotFoundPage />

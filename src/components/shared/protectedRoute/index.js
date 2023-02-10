@@ -9,12 +9,15 @@ const ProtectedRoute = (props) => {
   const { path, roles, children, render, ...rest } = props;
   const roleStore = useSelector(selectAuthRole);
 
+  console.log(roleStore);
+  console.log(roles);
+
   return (
     <Route
       path={path}
       {...rest}
       render={() => {
-        return roleStore === roles ? children : <Redirect to={{ pathname: '/auth' }} />;
+        return roleStore === roles ? children : <Redirect to={{ pathname: '/auth/sign-in' }} />;
       }}
     />
   );
