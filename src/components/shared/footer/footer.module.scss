@@ -1,18 +1,17 @@
-.footerComponent{
-    max-width: 100%;
-    padding: 20px 0;
-    background-color: #f6f6f6;
+.footerComponent {
+  max-width: 100%;
+  padding: 20px 0;
+  background-color: #f6f6f6;
+  width: 100%;
 
-
-    left: 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.wrapper{
-    margin: auto;
-    max-width: 1920px;
-    width: 90%;
-  }
-  
+.wrapper {
+  margin: auto;
+  max-width: 1920px;
+  width: 90%;
+}

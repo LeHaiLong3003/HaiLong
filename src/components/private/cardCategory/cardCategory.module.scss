@@ -1,0 +1,20 @@
+.cardCategory {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.categoryMainCard {
+  width: 100% !important;
+}
+
+.skeletonImage {
+  width: 100% !important;
+  height: 150px !important;
+}
+
+.cardImageCover {
+  width: 100% !important;
+  height: 150px !important;
+  object-fit: cover;
+  overflow: hidden;
+}
