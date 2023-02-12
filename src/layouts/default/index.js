@@ -37,8 +37,8 @@ const DefaultLayout = () => {
             <Redirect to='/' />
           </Switch>
         </div>
-        <FooterComponent />
       </Layout>
+      <FooterComponent />
     </div>
   );
 };
