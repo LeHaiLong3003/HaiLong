@@ -10,13 +10,14 @@ import HeaderComponent from 'src/components/shared/header';
 // Other
 import menuItems from 'src/routers';
 import styles from './defaultLayout.module.scss';
+import BannerSearch from 'src/components/private/bannerSearch';
 
 const cx = classNames.bind(styles);
 
 const DefaultLayout = () => {
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
+  // const {
+  //   token: { colorBgContainer },
+  // } = theme.useToken();
 
   console.log(`${JSON.stringify(menuItems, null, 2)}`);
 
@@ -25,6 +26,7 @@ const DefaultLayout = () => {
       <HeaderComponent />
       <Layout className={cx('wrapper')}>
         <div className={cx('mainContent')}>
+          <BannerSearch />
           <Switch>
             {menuItems.map((page) => (
               <Route exact={page.exact} path={page.path} key={page.path}>

@@ -1,8 +1,10 @@
+import FindCoursePage from 'src/pages/findCourse';
+
 // Student
 const menuItems = [
   {
     name: 'Tìm kiếm khóa học',
-    component: <h3>Tìm kiếm khóa học</h3>,
+    component: <FindCoursePage />,
     path: '/',
     exact: true,
   },
