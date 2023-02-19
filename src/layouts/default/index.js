@@ -19,8 +19,6 @@ const DefaultLayout = () => {
   //   token: { colorBgContainer },
   // } = theme.useToken();
 
-  console.log(`${JSON.stringify(menuItems, null, 2)}`);
-
   return (
     <div id='defaultLayout' className={cx('defaultLayout')}>
       <HeaderComponent />
