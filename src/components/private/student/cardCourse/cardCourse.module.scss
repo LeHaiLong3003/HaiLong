@@ -9,12 +9,37 @@
 
 .skeletonImage {
   width: 100% !important;
-  height: 150px !important;
+  height: 180px !important;
 }
 
 .cardImageCover {
   width: 100% !important;
-  height: 150px !important;
+  height: 180px !important;
   object-fit: cover;
   overflow: hidden;
+}
+
+.contentCourse {
+  margin-top: 16px;
+}
+
+.contentRow {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.buyAction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.rowImageLabel {
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: cover;
 }
