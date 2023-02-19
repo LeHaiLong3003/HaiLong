@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { Col, Row } from 'antd';
+import { Col, Pagination, Row } from 'antd';
 
 import CardCategory from 'src/components/private/student/cardCategory';
 import CardCourse from 'src/components/private/student/cardCourse';
@@ -31,10 +31,26 @@ const FindCoursePage = () => {
           Các khoá học thực chiến, lộ trình bài bản <br /> cung cấp kiến thức và kỹ năng đáp ứng nhu cầu của thị trường
         </p>
 
-        <Row gutter={[20, 20]} className={cx('')}>
-          <Col span={6} key={1}>
+        <Row gutter={[20, 20]} className={cx('courseListCard')}>
+          <Col span={8} key={1}>
             <CardCourse />
           </Col>
+          <Col span={8} key={1}>
+            <CardCourse />
+          </Col>
+          <Col span={8} key={1}>
+            <CardCourse />
+          </Col>
+          <Col span={8} key={1}>
+            <CardCourse />
+          </Col>
+          <Col span={8} key={1}>
+            <CardCourse />
+          </Col>
+        </Row>
+
+        <Row justify={'center'} className={cx('paginationWrap')}>
+          <Pagination defaultCurrent={1} pageSize={10} total={34} />
         </Row>
       </div>
     </div>
