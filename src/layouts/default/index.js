@@ -11,10 +11,13 @@ import HeaderComponent from 'src/components/shared/header';
 import menuItems from 'src/routers';
 import styles from './defaultLayout.module.scss';
 import BannerSearch from 'src/components/private/bannerSearch';
+import { routes } from 'src/utils/constants';
+import { useLocation } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 const DefaultLayout = () => {
+  const location = useLocation();
   // const {
   //   token: { colorBgContainer },
   // } = theme.useToken();
@@ -24,7 +27,7 @@ const DefaultLayout = () => {
       <HeaderComponent />
       <Layout className={cx('wrapper')}>
         <div className={cx('mainContent')}>
-          <BannerSearch />
+          {location.pathname === routes.DEFAULT && <BannerSearch />}
           <Switch>
             {menuItems.map((page) => (
               <Route exact={page.exact} path={page.path} key={page.path}>

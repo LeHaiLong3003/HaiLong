@@ -1,4 +1,5 @@
 import FindCoursePage from 'src/pages/findCourse';
+import SignIn from 'src/pages/signIn';
 
 // Student
 const menuItems = [
@@ -16,7 +17,7 @@ const menuItems = [
   },
   {
     name: null,
-    component: <h3>Auth SignIn</h3>,
+    component: <SignIn />,
     path: '/auth/sign-in',
     exact: true,
   },
