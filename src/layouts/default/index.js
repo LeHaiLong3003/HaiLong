@@ -13,19 +13,20 @@ import ProtectedRoute from 'src/components/shared/protectedRoute';
 import menuItems from 'src/routers';
 import { UserRoles } from 'src/utils/enum';
 import styles from './defaultLayout.module.scss';
-import { routes } from 'src/utils/constants';
+import { AUTH_SCREEN_PATH, routes } from 'src/utils/constants';
 
 const cx = classNames.bind(styles);
 
 const DefaultLayout = () => {
   const location = useLocation();
+  const authScreenPath = location.pathname.includes(AUTH_SCREEN_PATH);
 
   return (
     <div id='defaultLayout' className={cx('defaultLayout')}>
       <HeaderComponent />
       <Layout className={cx('wrapper')}>
         <div className={cx('mainContent')}>
-          {location.pathname === routes.DEFAULT && <BannerSearch />}
+          {!authScreenPath && <BannerSearch />}
           <Switch>
             {menuItems.map((page) => {
               return page.isPrivate ? (

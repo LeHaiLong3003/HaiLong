@@ -11,6 +11,9 @@ export const urls = {
   USERS: 'users',
 };
 
+// Value to compare
+export const AUTH_SCREEN_PATH = 'auth';
+
 // Price Currency list
 export const CURRENCY_LIST = [
   {
