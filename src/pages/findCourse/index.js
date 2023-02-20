@@ -18,7 +18,7 @@ const FindCoursePage = () => {
 
         <Row gutter={[20, 20]} className={cx('categoryListCard')}>
           {categories.map((category, index) => (
-            <Col span={6} key={index}>
+            <Col xxl={4} xl={6} lg={8} md={12} key={index}>
               <CardCategory {...category} />
             </Col>
           ))}
@@ -32,19 +32,19 @@ const FindCoursePage = () => {
         </p>
 
         <Row gutter={[20, 20]} className={cx('courseListCard')}>
-          <Col span={8} key={1}>
+          <Col xxl={6} xl={8} md={12} key={1}>
             <CardCourse />
           </Col>
-          <Col span={8} key={1}>
+          <Col xxl={6} xl={8} md={12} key={1}>
             <CardCourse />
           </Col>
-          <Col span={8} key={1}>
+          <Col xxl={6} xl={8} md={12} key={1}>
             <CardCourse />
           </Col>
-          <Col span={8} key={1}>
+          <Col xxl={6} xl={8} md={12} key={1}>
             <CardCourse />
           </Col>
-          <Col span={8} key={1}>
+          <Col xxl={6} xl={8} md={12} key={1}>
             <CardCourse />
           </Col>
         </Row>
