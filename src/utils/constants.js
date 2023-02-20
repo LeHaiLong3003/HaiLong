@@ -10,3 +10,38 @@ export const routes = {
 export const urls = {
   USERS: 'users',
 };
+
+// Price Currency list
+export const CURRENCY_LIST = [
+  {
+    id: 0,
+    price: 10,
+    coin: 15,
+    selected: false,
+  },
+  {
+    id: 1,
+    price: 50,
+    coin: 75,
+    selected: false,
+  },
+  {
+    id: 2,
+    price: 100,
+    coin: 150,
+    selected: false,
+  },
+  {
+    id: 3,
+    price: 200,
+    coin: 300,
+    selected: false,
+  },
+  { id: 4, price: 500, coin: 750, selected: false },
+  {
+    id: 5,
+    price: 1000,
+    coin: 1500,
+    selected: false,
+  },
+];

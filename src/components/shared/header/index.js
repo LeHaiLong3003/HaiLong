@@ -29,7 +29,7 @@ const HeaderComponent = () => {
                 return (
                   <Menu.Item key={index} className={cx('menuItemAntd')}>
                     {menu.name}
-                    <Link to={menu.path} />
+                    <Link to={menu.layout + menu.path} />
                   </Menu.Item>
                 );
               })}

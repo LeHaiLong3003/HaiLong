@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './components/shared/protectedRoute';
 import DefaultLayout from './layouts/default';
 import AdminLayout from './layouts/admin';
-import StudentLayout from './layouts/student';
 import TeacherLayout from './layouts/teacher';
 import NotFoundPage from './components/shared/notFoundPage';
 
@@ -16,10 +15,6 @@ import './App.css';
 function App() {
   return (
     <Switch>
-      <ProtectedRoute exact roles={UserRoles.STUDENT} path='/student'>
-        <StudentLayout />
-      </ProtectedRoute>
-
       <ProtectedRoute exact roles={UserRoles.TEACHER} path='/teacher'>
         <TeacherLayout />
       </ProtectedRoute>

@@ -1,0 +1,116 @@
+.makePaymentPage {
+  margin-top: 50px;
+}
+
+// Selected Currency
+.selectPriceWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.selectPriceHead {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  column-gap: 16px;
+}
+
+.priceHeadLabel {
+  flex-basis: 20%;
+  font-weight: 700;
+  color: #1677ff;
+  padding-left: 12px;
+}
+
+.coinNumberHeadLabel {
+  flex: 1;
+  font-weight: 700;
+  color: #1677ff;
+  padding-left: 12px;
+}
+
+.optionPriceContent {
+  width: 80%;
+  margin-top: 16px;
+}
+
+.priceRow {
+  width: 100%;
+  height: 48px;
+  padding: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  border: 1px solid #d9d9d9;
+}
+
+.priceRowActive {
+  border: 1px solid #1677ff;
+}
+
+.priceField {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 16px;
+}
+
+// Detail
+.detailTransactionWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.detailTransactionContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.detailTranLabel {
+  border-left: 1px solid #d9d9d9;
+  font-weight: 700;
+  color: #131313;
+  padding-left: 12px;
+}
+
+.detailTranMainContent {
+  width: 100%;
+}
+
+.detailTranRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+}
+
+.detailTranRowLabel {
+  font-weight: 500;
+  color: #131313;
+}
+
+.detailTranRowValue {
+  color: #131313;
+}
+
+// Button Paypal
+.detailTransactionPaypal {
+  width: 80%;
+  margin-top: 24px;
+  text-align: center;
+}
