@@ -1,16 +1,18 @@
 import React from 'react';
 import { Button, Col, Layout, Menu, Row } from 'antd';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import menuItems from 'src/routers';
 import styles from './header.module.scss';
 import Logo from '../../../assets/images/logo.svg';
+import { routes } from 'src/utils/constants';
 
 const { Header } = Layout;
 const cx = classNames.bind(styles);
 
 const HeaderComponent = () => {
+  const history = useHistory();
   return (
     <Header className={cx('headerComponent')}>
       <div className={cx('wrapper')}>
@@ -35,7 +37,14 @@ const HeaderComponent = () => {
           </Col>
 
           <Col className='gutter-row' align='end' span={4}>
-            <Button type='primary'>Đăng nhập</Button>
+            <Button
+              type='primary'
+              onClick={() => {
+                history.push(routes.SIGN_IN);
+              }}
+            >
+              Đăng nhập
+            </Button>
           </Col>
         </Row>
       </div>
