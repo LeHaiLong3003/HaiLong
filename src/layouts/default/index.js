@@ -13,7 +13,7 @@ import ProtectedRoute from 'src/components/shared/protectedRoute';
 import menuItems from 'src/routers';
 import { UserRoles } from 'src/utils/enum';
 import styles from './defaultLayout.module.scss';
-import { AUTH_SCREEN_PATH, routes } from 'src/utils/constants';
+import { AUTH_SCREEN_PATH } from 'src/utils/constants';
 
 const cx = classNames.bind(styles);
 
