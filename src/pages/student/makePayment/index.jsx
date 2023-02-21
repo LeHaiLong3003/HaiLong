@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 
 import { CURRENCY_LIST } from 'src/utils/constants';
 import styles from './makePayment.module.scss';
+import PaypalCheckoutButton from 'src/components/private/paypal';
 
 const { Text } = Typography;
 const cx = classNames.bind(styles);
@@ -18,6 +19,11 @@ const MakePaymentPage = () => {
     );
 
     setCurrencyList(updateCurrencyList);
+  };
+
+  const handleSubmit = (detailsOrder) => {
+    alert('Payment Success oke');
+    console.log(`[handleSubmit] -> detailsOrder: ${JSON.stringify(detailsOrder, null, 3)}`);
   };
 
   return (
@@ -83,7 +89,9 @@ const MakePaymentPage = () => {
               </div>
             </div>
 
-            <div className={cx('detailTransactionPaypal')}>Paypal Button gone here!!</div>
+            <div className={cx('detailTransactionPaypal')}>
+              <PaypalCheckoutButton amount={'10.00'} onSubmitPaypal={handleSubmit} params={'Front-End ReactJs'} />
+            </div>
           </div>
         </Col>
       </Row>

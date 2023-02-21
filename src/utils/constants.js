@@ -1,5 +1,6 @@
 // Setup for Apis
 export const baseURL = process.env.REACT_APP_BASE_URL;
+export const paypalClientID = process.env.REACT_APP_PAYPAL_CLIENT_ID;
 
 // Routes
 export const routes = {
@@ -48,3 +49,12 @@ export const CURRENCY_LIST = [
     selected: false,
   },
 ];
+
+// Paypal
+export const StorageConstants = {
+  ACCESS_TOKEN: 'access_token',
+  SOCIAL: 'SOCIAL',
+  ID_USER: 'ID_USER',
+  TRANSACTION: 'TRANSACTION',
+  CURRENT_ROLE: 'CURRENT_ROLE',
+};

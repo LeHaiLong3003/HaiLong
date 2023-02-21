@@ -16,6 +16,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 
 npm-debug.log*
 yarn-debug.log*
@@ -35,3 +36,5 @@ inbound-augury-324120-7c4eb2bd55ea.json
 .env.prod
 .env.dev
 .env.local
+.env
+note.txt
