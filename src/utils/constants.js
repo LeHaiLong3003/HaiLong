@@ -6,6 +6,8 @@ export const paypalClientID = process.env.REACT_APP_PAYPAL_CLIENT_ID;
 export const routes = {
   DEFAULT: '/',
   SIGN_IN: '/auth/sign-in',
+  SIGN_UP_STUDENT: '/auth/sign-up-student',
+  SIGN_UP_TEACHER: '/auth/sign-up/teacher',
 };
 
 export const urls = {

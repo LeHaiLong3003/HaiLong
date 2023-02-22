@@ -1,6 +1,7 @@
 import FindCoursePage from 'src/pages/findCourse';
 import SignIn from 'src/pages/signIn';
 import MakePaymentPage from 'src/pages/student/makePayment';
+import SignUpStudent from 'src/pages/signUpStudent';
 
 // Student
 const menuItems = [
@@ -33,6 +34,22 @@ const menuItems = [
     component: <SignIn />,
     layout: '',
     path: '/auth/sign-in',
+    exact: true,
+    isPrivate: false,
+  },
+  {
+    name: null,
+    component: <SignUpStudent />,
+    layout: '',
+    path: '/auth/sign-up-student',
+    exact: true,
+    isPrivate: false,
+  },
+  {
+    name: null,
+    component: <h3>SignUp Teacher</h3>,
+    layout: '',
+    path: '/auth/sign-up/teacher',
     exact: true,
     isPrivate: false,
   },

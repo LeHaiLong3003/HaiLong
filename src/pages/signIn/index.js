@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './signIn.module.scss';
 import { Button, Col, Form, Input, Row } from 'antd';
+import { useHistory } from 'react-router-dom';
+import { routes } from 'src/utils/constants';
 
 const cx = classNames.bind(styles);
 
 const SignIn = () => {
+  const history = useHistory();
+  const [isSignUp, setIsSignUp] = useState(false);
   const onFinish = (values) => {
     console.log('Success:', values);
   };
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
+
+  const handleClickBtnSignUp = () => {
+    setIsSignUp(true);
+  };
+
   return (
-    <div id='signInPage' className={cx('signInPage')}>
+    <div id='signInPage' className={cx('sign-in__contaniner')}>
       <Row gutter={16} justify='space-between' align='middle'>
-        <Col className='gutter-row flex' span={12}>
+        <Col className={cx(isSignUp ? '' : 'content__sign-in')} span={12}>
           <Form
             name='login'
             layout='vertical'
@@ -54,14 +63,42 @@ const SignIn = () => {
           </Form>
         </Col>
 
-        <Col className='gutter-row' span={12}>
-          <div className={cx('sign-up')}>
-            <h2>Hello, Friend!</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            <Button type='default' size='large'>
-              Đăng kí
-            </Button>
-          </div>
+        <Col className={cx('content__sign-up ' + (isSignUp ? 'background-color' : ''))} span={12}>
+          {!isSignUp ? (
+            <div className={cx('sign-up')}>
+              <h2>Hello, Friend!</h2>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <Button type='default' size='large' onClick={handleClickBtnSignUp}>
+                Đăng kí
+              </Button>
+            </div>
+          ) : (
+            <div className={cx('select-type__sign-up')}>
+              <h2>Who are you?</h2>
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
+                <Button
+                  type='default'
+                  size='large'
+                  style={{ marginRight: '24px' }}
+                  onClick={() => {
+                    history.push(routes.SIGN_UP_STUDENT);
+                  }}
+                >
+                  Học sinh
+                </Button>
+                <Button
+                  type='default'
+                  size='large'
+                  style={{ marginRight: '24px' }}
+                  onClick={() => {
+                    history.push(routes.SIGN_UP_TEACHER);
+                  }}
+                >
+                  Giáo viên
+                </Button>
+              </div>
+            </div>
+          )}
         </Col>
       </Row>
     </div>
