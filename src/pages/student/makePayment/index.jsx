@@ -11,6 +11,7 @@ const cx = classNames.bind(styles);
 
 const MakePaymentPage = () => {
   const [currencyList, setCurrencyList] = useState(CURRENCY_LIST);
+  const [transactionSelected, setTransactionSelected] = useState(null);
 
   const handleSelectedCurrency = (index) => {
     let updateCurrencyList;
@@ -18,6 +19,8 @@ const MakePaymentPage = () => {
       item.id === index ? { ...item, selected: !item.selected } : { ...item, selected: false }
     );
 
+    const transactionSelect = updateCurrencyList.find((tran) => tran.selected);
+    transactionSelect ? setTransactionSelected(transactionSelect) : setTransactionSelected(null);
     setCurrencyList(updateCurrencyList);
   };
 
@@ -60,40 +63,42 @@ const MakePaymentPage = () => {
           </div>
         </Col>
 
-        <Col span={12}>
-          <div className={cx('detailTransactionWrap')}>
-            <div className={cx('detailTransactionContent')}>
-              <div className={cx('detailTranHead')}>
-                <div className={cx('detailTranLabel')}>&#x2022; Chi tiết giao dịch</div>
+        {transactionSelected && (
+          <Col span={12}>
+            <div className={cx('detailTransactionWrap')}>
+              <div className={cx('detailTransactionContent')}>
+                <div className={cx('detailTranHead')}>
+                  <div className={cx('detailTranLabel')}>&#x2022; Chi tiết giao dịch</div>
+                </div>
+                <Divider style={{ backgroundColor: '#D9D9D9', margin: '16px 0' }} />
+
+                <div className={cx('detailTranMainContent')}>
+                  <div className={cx('detailTranRow')}>
+                    <span className={cx('detailTranRowLabel')}>Giá</span>
+                    <span className={cx('detailTranRowValue')}>{`${transactionSelected.price} USD`}</span>
+                  </div>
+                  <Divider style={{ backgroundColor: '#D9D9D9', margin: '8px 0' }} />
+
+                  <div className={cx('detailTranRow')}>
+                    <span className={cx('detailTranRowLabel')}>Số Coin nhận được</span>
+                    <span className={cx('detailTranRowValue')}>{`${transactionSelected.coin} Coin`}</span>
+                  </div>
+                  <Divider style={{ backgroundColor: '#D9D9D9', margin: '8px 0' }} />
+
+                  <div className={cx('detailTranRow')}>
+                    <span className={cx('detailTranRowLabel')}>Phương thức thanh toán</span>
+                    <span className={cx('detailTranRowValue')}>Paypal</span>
+                  </div>
+                  <Divider style={{ backgroundColor: '#D9D9D9', margin: '8px 0' }} />
+                </div>
               </div>
-              <Divider style={{ backgroundColor: '#D9D9D9', margin: '16px 0' }} />
 
-              <div className={cx('detailTranMainContent')}>
-                <div className={cx('detailTranRow')}>
-                  <span className={cx('detailTranRowLabel')}>Giá</span>
-                  <span className={cx('detailTranRowValue')}>50 USD</span>
-                </div>
-                <Divider style={{ backgroundColor: '#D9D9D9', margin: '8px 0' }} />
-
-                <div className={cx('detailTranRow')}>
-                  <span className={cx('detailTranRowLabel')}>Số Coin nhận được</span>
-                  <span className={cx('detailTranRowValue')}>75 Coin</span>
-                </div>
-                <Divider style={{ backgroundColor: '#D9D9D9', margin: '8px 0' }} />
-
-                <div className={cx('detailTranRow')}>
-                  <span className={cx('detailTranRowLabel')}>Phương thức thanh toán</span>
-                  <span className={cx('detailTranRowValue')}>Paypal</span>
-                </div>
-                <Divider style={{ backgroundColor: '#D9D9D9', margin: '8px 0' }} />
+              <div className={cx('detailTransactionPaypal')}>
+                <PaypalCheckoutButton amount={transactionSelected.price.toString()} onSubmitPaypal={handleSubmit} />
               </div>
             </div>
-
-            <div className={cx('detailTransactionPaypal')}>
-              <PaypalCheckoutButton amount={'10.00'} onSubmitPaypal={handleSubmit} params={'Front-End ReactJs'} />
-            </div>
-          </div>
-        </Col>
+          </Col>
+        )}
       </Row>
     </div>
   );

@@ -4,7 +4,7 @@ import { PayPalButtons } from '@paypal/react-paypal-js';
 import { StorageConstants } from 'src/utils/constants';
 
 const PaypalCheckoutButton = (props) => {
-  const { amount, onSubmitPaypal, params } = props;
+  const { amount, onSubmitPaypal } = props;
 
   const handleCreateOrder = (data, actions) => {
     return actions.order
@@ -54,7 +54,7 @@ const PaypalCheckoutButton = (props) => {
       }}
       onClick={handleClick}
       createOrder={handleCreateOrder}
-      forceReRender={[amount, params]}
+      forceReRender={[amount]}
       onApprove={handleApprove}
       onCancel={() => {}}
       onError={handleError}
